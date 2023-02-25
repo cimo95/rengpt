@@ -51,7 +51,6 @@ init python:
     def dogpt(model,iTemp,prompt):
         import requests
         sKey = open(config.basedir.replace('\\','/')+"/game/apikey.txt","r").read()
-        sModel = "text-davinci-003"
 
         URL = 'https://api.openai.com/v1/completions'
 
@@ -62,7 +61,7 @@ init python:
         }
 
         PARAM = {
-            'model' : sModel,
+            'model' : model,
             'prompt' : prompt,
             'temperature' : iTemp,
             'max_tokens' : 150,
